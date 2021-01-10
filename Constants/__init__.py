@@ -12,3 +12,6 @@ from .path_info import PathInfo
 class Constants(PathInfo):
     PROVINCE_NAME = 'province_name'
     CITY_NAME = 'city_name'
+    YEAR = 'year'
+
+    HAS_POLICY = 'has_policy'
