@@ -6,3 +6,9 @@
 # @Author: Mark Wang
 # @Email: wangyouan@gamil.com
 
+from .path_info import PathInfo
+
+
+class Constants(PathInfo):
+    PROVINCE_NAME = 'province_name'
+    CITY_NAME = 'city_name'
