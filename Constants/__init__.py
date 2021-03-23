@@ -29,7 +29,7 @@ class Constants(PathInfo):
 
 
 class ConstantsWSL(Constants):
-    ROOT_PATH = '/mnt/d/wyatc/GoogleDrive/Projects/NewProjects/ChineseGovernmentSubsidies'
+    ROOT_PATH = '/mnt/d/wyatc/Documents/Projects/ChinaPolicy'
     DATA_PATH = os.path.join(ROOT_PATH, 'data')
     TEMP_PATH = os.path.join(ROOT_PATH, 'temp')
     OUTPUT_PATH = os.path.join(ROOT_PATH, 'result')
