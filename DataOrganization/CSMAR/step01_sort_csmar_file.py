@@ -99,6 +99,7 @@ if __name__ == '__main__':
     for index_id in key_zip_dict:
         data_df.loc[index_id, 'Zipcode'] = key_zip_dict[index_id]
 
+    # ZIPCODE to province information
     zip_to_province = {'51': 'GUANGDONG', '10': 'BEIJING', '13': 'JILIN', '22': 'JIANGSU', '12': 'LIAONING',
                        '23': 'ANHUI', '61': 'SICHUAN', '41': 'HUNAN', '31': 'ZHEJIANG', '05': 'HEBEI', '83': 'XINJIANG',
                        '21': 'JIANGSU', '52': 'GUANGDONG', '26': 'SHANDONG', '46': 'HENAN', '06': 'HEBEI',
