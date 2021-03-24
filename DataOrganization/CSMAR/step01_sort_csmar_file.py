@@ -115,4 +115,4 @@ if __name__ == '__main__':
 
     data_df.loc[:, 'province'] = data_df['Zipcode'].str[:2].replace(zip_to_province)
     data_df.loc[:, const.YEAR] = data_df['EndDate'].str[:4].astype(int)
-    data_df.to_pickle(os.path.join(const.DATABASE_PATH, 'pickle_file', 'basic_information.pkl'))
+    data_df.to_pickle(os.path.join(const.DATABASE_PATH, 'CSMAR', 'pickle_file', 'basic_information.pkl'))
