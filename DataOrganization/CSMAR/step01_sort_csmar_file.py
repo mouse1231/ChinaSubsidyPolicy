@@ -116,3 +116,16 @@ if __name__ == '__main__':
     data_df.loc[:, 'province'] = data_df['Zipcode'].str[:2].replace(zip_to_province)
     data_df.loc[:, const.YEAR] = data_df['EndDate'].str[:4].astype(int)
     data_df.to_pickle(os.path.join(const.DATABASE_PATH, 'CSMAR', 'pickle_file', 'basic_information.pkl'))
+
+    # organize firm financial indicators information data
+    z = zipfile.ZipFile(
+        os.path.join(const.DATABASE_PATH, 'CSMAR', 'Fundamental Analysis', 'Financial Indicators183728668.zip'))
+    data_df = DataFrame()
+    for file_info in z.filelist:
+        if file_info.filename.endswith('.csv'):
+            data_df: DataFrame = pd.read_csv(z.open(file_info.filename),
+                                             error_bad_lines=False, warn_bad_lines=False)
+            break
+
+    data_df.loc[:, const.YEAR] = data_df['Accper'].str[:4].astype(int)
+    data_df.to_pickle(os.path.join(const.DATABASE_PATH, 'CSMAR', 'pickle_file', 'financial_indicators.pkl'))
