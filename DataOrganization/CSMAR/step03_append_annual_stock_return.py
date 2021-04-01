@@ -24,6 +24,7 @@ if __name__ == '__main__':
     annual_sr_df: DataFrame = annual_stock_return.loc[:, ['Stkcd', 'Trdynt', 'Yretnd']].rename(
         columns={'Trdynt': const.YEAR})
     annual_sr_df.loc[:, 'year'] = annual_sr_df[const.YEAR].astype(int)
+    annual_sr_df.to_pickle(os.path.join(const.TEMP_PATH, '20210401_csmar_stock_return_data.pkl'))
 
     csmar_df: DataFrame = pd.read_pickle(os.path.join(const.TEMP_PATH, '20210326_csmsr_5_database.pkl'))
     csmar_df.loc[:, 'Stkcd'] = csmar_df['Stkcd'].astype(str).str.zfill(6)
