@@ -23,13 +23,13 @@ if __name__ == '__main__':
     reg_df: DataFrame = pd.read_pickle(os.path.join(const.TEMP_PATH, '20210401_china_policy_regression_data.pkl'))
 
     # winsorize keys
-    win_keys = ['T40401_1', 'F100901A_1', 'F053401B_1', 'F053201B_1', 'RDInvestRatio_1',
+    win_keys = ['T40401_1', 'F100901A_1', 'F053401B_1', 'F053201B', 'RDInvestRatio_1',
                 'RDInvestNetprofitRatio_1', 'RDSpendSumRatio_1', 'RDPersonRatio_1', 'F101001A_1', 'F011201A_1']
-    new_win_keys = list()
 
     for key in tqdm(win_keys):
         reg_df.loc[:, '{}_win'.format(key)] = winsorize(reg_df[key], limits=(0.01, 0.01))
-        reg_df.loc[:, '{}_win'.format(key[:-2])] = winsorize(reg_df[key[:-2]], limits=(0.01, 0.01))
+        if key.endswith('_1'):
+            reg_df.loc[:, '{}_win'.format(key[:-2])] = winsorize(reg_df[key[:-2]], limits=(0.01, 0.01))
 
     # fillin missing values
     miss_keys = ['F053401B_1', 'Apply_ln_1', 'ApplyGrant_ln_1', 'ApplyTermination_ln_1', 'ApplyPending_ln_1',
