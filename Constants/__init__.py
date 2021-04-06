@@ -33,3 +33,12 @@ class ConstantsWSL(Constants):
     DATA_PATH = os.path.join(ROOT_PATH, 'data')
     TEMP_PATH = os.path.join(ROOT_PATH, 'temp')
     OUTPUT_PATH = os.path.join(ROOT_PATH, 'result')
+
+
+class ConstantsWIN10(Constants):
+    ROOT_PATH = r'D:\wyatc\Documents\Projects\ChinaPolicy'
+    DATA_PATH = os.path.join(ROOT_PATH, 'data')
+    TEMP_PATH = os.path.join(ROOT_PATH, 'temp')
+    OUTPUT_PATH = os.path.join(ROOT_PATH, 'result')
+    REG_RESULT_PATH = os.path.join(ROOT_PATH, 'regression_results')
+    REG_DATA_PATH = os.path.join(ROOT_PATH, 'regression_data')
